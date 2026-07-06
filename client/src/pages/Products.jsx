@@ -23,7 +23,7 @@ function Products() {
   ];
 
   useEffect(() => {
-    fetch("e https:// (https://ecommerce-fullstack-design-production-9f4a.up.railway.app)/api/products")
+    fetch("https://ecommerce-fullstack-design-production-9f4a.up.railway.app/api/products")
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);

@@ -34,7 +34,7 @@ function Dashboard() {
     try {
       setLoading(true);
 
-      const res = await fetch("e https:// (https://ecommerce-fullstack-design-production-9f4a.up.railway.app)/api/dashboard");
+      const res = await fetch("https://ecommerce-fullstack-design-production-9f4a.up.railway.app/api/dashboard");
       const data = await res.json();
 
       setStats(data);

@@ -13,7 +13,7 @@ function ProductCard({ product }) {
     }
 
     try {
-      const res = await fetch("e https:// (https://ecommerce-fullstack-design-production-9f4a.up.railway.app)/api/cart/add", {
+      const res = await fetch("https://ecommerce-fullstack-design-production-9f4a.up.railway.app/api/cart/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -46,7 +46,7 @@ function ProductCard({ product }) {
       </div>
 
       <img
-        src={`e https:// (https://ecommerce-fullstack-design-production-9f4a.up.railway.app)/images/${product.image}`}
+        src={`https://ecommerce-fullstack-design-production-9f4a.up.railway.app/images/${product.image}`}
         alt={product.name}
         className="product-image"
       />

@@ -21,7 +21,7 @@ function Register() {
     e.preventDefault();
 
     try {
-      const res = await fetch("e https:// (https://ecommerce-fullstack-design-production-9f4a.up.railway.app)/api/auth/register", {
+      const res = await fetch("https://ecommerce-fullstack-design-production-9f4a.up.railway.app/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

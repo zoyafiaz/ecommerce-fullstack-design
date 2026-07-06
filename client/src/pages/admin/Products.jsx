@@ -11,7 +11,7 @@ function Products() {
   // Fetch all products
   const fetchProducts = async () => {
     try {
-      const res = await fetch("e https:// (https://ecommerce-fullstack-design-production-9f4a.up.railway.app)/api/products");
+      const res = await fetch("https://ecommerce-fullstack-design-production-9f4a.up.railway.app/api/products");
       const data = await res.json();
       setProducts(data);
     } catch (error) {
@@ -28,7 +28,7 @@ function Products() {
     if (!confirmDelete) return;
 
     try {
-      const res = await fetch(`e https:// (https://ecommerce-fullstack-design-production-9f4a.up.railway.app)/api/products/${id}`, {
+      const res = await fetch(`https://ecommerce-fullstack-design-production-9f4a.up.railway.app/api/products/${id}`, {
         method: "DELETE",
       });
 

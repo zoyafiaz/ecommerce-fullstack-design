@@ -19,7 +19,7 @@ function EditProduct() {
 
   const fetchProduct = async () => {
     try {
-      const res = await fetch(`ecommerce-fullstack-design-production-9f4a.up.railway.app/api/products/${id}`);
+      const res = await fetch(`e https://ecommerce-fullstack-design-production-9f4a.up.railway.app/api/products/${id}`);
       const data = await res.json();
 
       setProduct(data);
@@ -39,7 +39,7 @@ function EditProduct() {
     e.preventDefault();
 
     try {
-      const res = await fetch(`ecommerce-fullstack-design-production-9f4a.up.railway.app/api/products/${id}`, {
+      const res = await fetch(`e https://ecommerce-fullstack-design-production-9f4a.up.railway.app/api/products/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

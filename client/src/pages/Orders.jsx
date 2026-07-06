@@ -8,7 +8,7 @@ function Orders() {
       const token = localStorage.getItem("token");
 
       try {
-        const res = await fetch("ecommerce-fullstack-design-production-9f4a.up.railway.app/api/orders", {
+        const res = await fetch("e https://ecommerce-fullstack-design-production-9f4a.up.railway.app/api/orders", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

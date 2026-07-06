@@ -10,7 +10,7 @@ function Cart() {
     const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch("ecommerce-fullstack-design-production-9f4a.up.railway.app/api/cart", {
+      const res = await fetch("e https://ecommerce-fullstack-design-production-9f4a.up.railway.app/api/cart", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -38,7 +38,7 @@ function Cart() {
   const increaseQuantity = async (id) => {
     const token = localStorage.getItem("token");
 
-    await fetch(`ecommerce-fullstack-design-production-9f4a.up.railway.app/api/cart/increase/${id}`, {
+    await fetch(`e https://ecommerce-fullstack-design-production-9f4a.up.railway.app/api/cart/increase/${id}`, {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -54,7 +54,7 @@ function Cart() {
   const decreaseQuantity = async (id) => {
     const token = localStorage.getItem("token");
 
-    await fetch(`ecommerce-fullstack-design-production-9f4a.up.railway.app/api/cart/decrease/${id}`, {
+    await fetch(`e https://ecommerce-fullstack-design-production-9f4a.up.railway.app/api/cart/decrease/${id}`, {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -70,7 +70,7 @@ function Cart() {
   const removeItem = async (id) => {
     const token = localStorage.getItem("token");
 
-    await fetch(`ecommerce-fullstack-design-production-9f4a.up.railway.app/api/cart/${id}`, {
+    await fetch(`e https://ecommerce-fullstack-design-production-9f4a.up.railway.app/api/cart/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -89,7 +89,7 @@ function Cart() {
   const token = localStorage.getItem("token");
 
   try {
-    const res = await fetch("ecommerce-fullstack-design-production-9f4a.up.railway.app/api/orders", {
+    const res = await fetch("e https://ecommerce-fullstack-design-production-9f4a.up.railway.app/api/orders", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -125,7 +125,7 @@ function Cart() {
           {cartItems.map((item) => (
             <div className="cart-item" key={item._id}>
               <img
-                src={`ecommerce-fullstack-design-production-9f4a.up.railway.app/images/${item.image}`}
+                src={`e https://ecommerce-fullstack-design-production-9f4a.up.railway.app/images/${item.image}`}
                 alt={item.name}
                 width="120"
               />

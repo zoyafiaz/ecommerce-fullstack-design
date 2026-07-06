@@ -20,7 +20,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const res = await fetch("ecommerce-fullstack-design-production-9f4a.up.railway.app/api/auth/login", {
+      const res = await fetch("e https://ecommerce-fullstack-design-production-9f4a.up.railway.app/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

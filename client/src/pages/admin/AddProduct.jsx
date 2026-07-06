@@ -20,7 +20,7 @@ function AddProduct() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5000/api/products", {
+      const res = await fetch("ecommerce-fullstack-design-production-9f4a.up.railway.app/api/products", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

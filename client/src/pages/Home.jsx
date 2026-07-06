@@ -10,7 +10,7 @@ function Home() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/products")
+    fetch("ecommerce-fullstack-design-production-9f4a.up.railway.app/api/products")
       .then((res) => res.json())
       .then((data) => setProducts(data))
       .catch((err) => console.error(err));

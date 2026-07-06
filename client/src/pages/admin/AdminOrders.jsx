@@ -15,7 +15,7 @@ function Dashboard() {
 
   const fetchDashboard = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/dashboard");
+      const res = await fetch("ecommerce-fullstack-design-production-9f4a.up.railway.app/api/dashboard");
       const data = await res.json();
 
       setStats(data);

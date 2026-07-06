@@ -9,7 +9,7 @@ function Users() {
 
   const fetchUsers = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/users");
+      const res = await fetch("ecommerce-fullstack-design-production-9f4a.up.railway.app/api/users");
 
       const data = await res.json();
 

@@ -1,6 +1,44 @@
 import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
-function ProductCard({ product, addToCart }) {
+function ProductCard({ product }) {
+  const { fetchCart } = useCart();
+
+  const addToCart = async () => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      alert("Please login first");
+      return;
+    }
+
+    try {
+      const res = await fetch("http://localhost:5000/api/cart/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(product),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        alert(data.message);
+        return;
+      }
+
+      // Refresh cart count in Navbar
+      await fetchCart();
+
+      alert("✅ Product added to cart successfully!");
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong!");
+    }
+  };
+
   return (
     <div className="product-card">
       <div className="product-badge">
@@ -8,22 +46,34 @@ function ProductCard({ product, addToCart }) {
       </div>
 
       <img
-        src={product.image}
+        src={`http://localhost:5000/images/${product.image}`}
         alt={product.name}
         className="product-image"
       />
 
       <div className="product-info">
         <h3>{product.name}</h3>
-        <p className="product-price">Rs. {product.price}</p>
-        <p className="product-category">{product.category}</p>
+
+        <p className="product-price">
+          Rs. {product.price}
+        </p>
+
+        <p className="product-category">
+          {product.category}
+        </p>
 
         <div className="product-buttons">
-          <Link to={`/products/${product.id}`} className="btn">
+          <Link
+            to={`/products/${product._id}`}
+            className="btn"
+          >
             View Details
           </Link>
 
-          <button className="btn add-cart-btn" onClick={() => addToCart(product)}>
+          <button
+            className="btn add-cart-btn"
+            onClick={addToCart}
+          >
             Add to Cart
           </button>
         </div>

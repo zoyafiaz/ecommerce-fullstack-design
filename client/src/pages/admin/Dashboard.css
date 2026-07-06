@@ -1,0 +1,222 @@
+.dashboard {
+  padding: 30px;
+  background: #f4f6f9;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  transition: all 0.3s ease;
+}
+
+.dashboard h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* =======================
+   STATS SECTION
+======================= */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* CARD DESIGN */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  margin: 0;
+  color: #666;
+  font-size: 18px;
+}
+
+.card h2 {
+  margin-top: 15px;
+  font-size: 35px;
+  color: #222;
+}
+
+/* CARD COLORS */
+.products {
+  border-left: 6px solid #3498db;
+}
+
+.users {
+  border-left: 6px solid #2ecc71;
+}
+
+.orders {
+  border-left: 6px solid #f39c12;
+}
+
+.revenue {
+  border-left: 6px solid #e74c3c;
+}
+
+/* =======================
+   TABLE STYLE (ALL TABLES)
+======================= */
+.table-box,
+.recent-orders {
+  margin-top: 30px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  overflow-x: auto;
+  transition: all 0.3s ease;
+}
+
+.table-box h2,
+.recent-orders h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.table-box table,
+.recent-orders table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.table-box th,
+.table-box td,
+.recent-orders th,
+.recent-orders td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.table-box th,
+.recent-orders th {
+  background: #f4f4f4;
+  font-weight: bold;
+}
+
+.table-box tr:hover,
+.recent-orders tr:hover {
+  background: #fafafa;
+}
+
+/* =======================
+   LOW STOCK SECTION
+======================= */
+.low-stock h2 {
+  color: #e74c3c;
+}
+
+.low-stock td:nth-child(2) {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* =======================
+   CHART BOX
+======================= */
+.chart-box {
+  margin-top: 30px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.chart-box h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* =======================
+   EMPTY STATE
+======================= */
+.empty-state {
+  text-align: center;
+  padding: 20px;
+  color: #999;
+  font-style: italic;
+}
+
+/* =======================
+   🌙 DARK MODE
+======================= */
+.dark {
+  background: #1e1e2f;
+  color: #fff;
+}
+
+.dark h1 {
+  color: #fff;
+}
+
+.dark .card {
+  background: #2a2a3d;
+  color: #fff;
+}
+
+.dark .card h3 {
+  color: #ccc;
+}
+
+.dark .recent-orders,
+.dark .table-box,
+.dark .chart-box {
+  background: #2a2a3d;
+  color: #fff;
+}
+
+.dark table th {
+  background: #333;
+  color: #fff;
+}
+
+.dark table td {
+  color: #ddd;
+}
+
+.dark tr:hover {
+  background: #3a3a50;
+}
+
+.dark .empty-state {
+  color: #bbb;
+}
+
+/* =======================
+   📱 MOBILE RESPONSIVE
+======================= */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 15px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .card h2 {
+    font-size: 28px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+  }
+
+  .table-box,
+  .recent-orders,
+  .chart-box {
+    padding: 15px;
+  }
+}

@@ -1,20 +1,57 @@
-import { useState } from "react";
-import products from "../data/Products";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 
-function Products({ addToCart }) {
+function Products() {
+  const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const categories = ["All", "Clothing", "Shoes", "Accessories", "Electronics"];
+  const [searchParams] = useSearchParams();
+
+  const categoryFromURL = searchParams.get("category");
+
+  const [selectedCategory, setSelectedCategory] = useState(
+    categoryFromURL || "All"
+  );
+
+  const categories = [
+    "All",
+    "Clothing",
+    "Shoes",
+    "Accessories",
+    "Electronics",
+  ];
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/products")
+      .then((response) => response.json())
+      .then((data) => {
+        setProducts(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching products:", error);
+      });
+  }, []);
+
+  useEffect(() => {
+    if (categoryFromURL) {
+      setSelectedCategory(categoryFromURL);
+    } else {
+      setSelectedCategory("All");
+    }
+  }, [categoryFromURL]);
 
   const filteredProducts = products.filter((product) => {
-    const matchesSearch = product.name
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase());
+    const search = searchTerm.toLowerCase();
+
+    const matchesSearch =
+      product.name.toLowerCase().includes(search) ||
+      product.category.toLowerCase().includes(search);
 
     const matchesCategory =
-      selectedCategory === "All" || product.category === selectedCategory;
+      selectedCategory === "All" ||
+      product.category.toLowerCase() ===
+        selectedCategory.toLowerCase();
 
     return matchesSearch && matchesCategory;
   });
@@ -27,7 +64,7 @@ function Products({ addToCart }) {
         <div className="products-topbar">
           <input
             type="text"
-            placeholder="Search products..."
+            placeholder="🔍 Search by product or category..."
             className="search-input"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -52,9 +89,8 @@ function Products({ addToCart }) {
           {filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (
               <ProductCard
-                key={product.id}
+                key={product._id}
                 product={product}
-                addToCart={addToCart}
               />
             ))
           ) : (

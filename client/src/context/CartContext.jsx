@@ -14,7 +14,7 @@ export const CartProvider = ({ children }) => {
     }
 
     try {
-      const res = await fetch("e https://ecommerce-fullstack-design-production-9f4a.up.railway.app/api/cart", {
+      const res = await fetch("e https:// (https://ecommerce-fullstack-design-production-9f4a.up.railway.app)/api/cart", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -11,7 +11,7 @@ function ProductDetails() {
   const { fetchCart } = useCart();
 
   useEffect(() => {
-    fetch(`e https://ecommerce-fullstack-design-production-9f4a.up.railway.app/api/products/${id}`)
+    fetch(`e https:// (https://ecommerce-fullstack-design-production-9f4a.up.railway.app)/api/products/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setProduct(data);
@@ -31,7 +31,7 @@ function ProductDetails() {
     }
 
     try {
-      const res = await fetch("e https://ecommerce-fullstack-design-production-9f4a.up.railway.app/api/cart/add", {
+      const res = await fetch("e https:// (https://ecommerce-fullstack-design-production-9f4a.up.railway.app)/api/cart/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -68,7 +68,7 @@ function ProductDetails() {
   return (
     <div className="product-details">
       <img
-        src={`e https://ecommerce-fullstack-design-production-9f4a.up.railway.app/images/${product.image}`}
+        src={`e https:// (https://ecommerce-fullstack-design-production-9f4a.up.railway.app)/images/${product.image}`}
         alt={product.name}
         className="details-image"
       />

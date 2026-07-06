@@ -9,7 +9,7 @@ function Users() {
 
   const fetchUsers = async () => {
     try {
-      const res = await fetch("e https://ecommerce-fullstack-design-production-9f4a.up.railway.app/api/users");
+      const res = await fetch("e https:// (https://ecommerce-fullstack-design-production-9f4a.up.railway.app)/api/users");
 
       const data = await res.json();
 

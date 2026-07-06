@@ -15,7 +15,7 @@ function Dashboard() {
 
   const fetchDashboard = async () => {
     try {
-      const res = await fetch("e https://ecommerce-fullstack-design-production-9f4a.up.railway.app/api/dashboard");
+      const res = await fetch("e https:// (https://ecommerce-fullstack-design-production-9f4a.up.railway.app)/api/dashboard");
       const data = await res.json();
 
       setStats(data);

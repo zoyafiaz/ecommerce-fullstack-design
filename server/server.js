@@ -17,6 +17,10 @@ const cartRoutes = require("./routes/cartRoutes");
 const orderRoutes = require("./routes/orderRoutes");
 
 const app = express();
+
+// ===============================
+// PORT Configuration for Railway
+// ===============================
 const PORT = process.env.PORT || 5000;
 
 // ===============================
@@ -263,8 +267,8 @@ app.use("/api/cart", cartRoutes);
 app.use("/api/orders", orderRoutes);
 
 // ===============================
-// Start Server
+// Start Server (Railway Fix applied here)
 // ===============================
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`🚀 Server running on port ${PORT}`);
 });
